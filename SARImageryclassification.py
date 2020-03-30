@@ -46,7 +46,7 @@ def detect_outlier(data_1, data_2, threshold=4):
     return data_1, data_2
 
 
-def AIFactory():
+def BuildModel():
     datagen = ImageDataGenerator(
         rotation_range=360,
         width_shift_range=0.2,
@@ -187,7 +187,6 @@ def AIFactory():
         Dense(units=1, activation='sigmoid')
     ])
 
-    opt = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False)
     opt = keras.optimizers.SGD(lr=0.01, momentum=0.8, nesterov=False)
 
     model.compile(optimizer=opt, loss='binary_crossentropy', metrics=['accuracy'])
@@ -211,7 +210,7 @@ def AIFactory():
 
 
 if not os.path.isfile('./model/Model_epoch32_loss0.3293_acc0.85.h5'):
-    AIFactory()
+    BuildModel()
 else:
     model = keras.models.load_model('./model/Model_epoch32_loss0.3293_acc0.85.h5')
     with open('results.csv', 'w', newline='') as file:
