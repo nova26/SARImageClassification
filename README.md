@@ -19,3 +19,5 @@ Generally, the ocean background will be darker at a higher incidence angle.
 You also need to consider the radar polarization, which is way the radar transmits and receives energy.
 More advanced radars like Sentinel-1, can transmit and receive in the horizontal and vertical planes.
 Using this, you can get what is called a dualpolarization image. 
+
+To Face this challenge i used VGG19 architecture
