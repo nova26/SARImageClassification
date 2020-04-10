@@ -1,4 +1,4 @@
-# SARImageClassification
+# SAR Image Classification
 
 Imagery data from satellite can have the same general characteristics as visual imagery but still have specific attributes. 
 
